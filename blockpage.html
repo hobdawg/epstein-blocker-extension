@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Access Blocked</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0f0f1a;
+      color: #e0e0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: #16213e;
+      border: 1px solid #e63946;
+      border-radius: 12px;
+      padding: 2.5rem 3rem;
+      text-align: center;
+      max-width: 480px;
+      width: 90%;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 { color: #e63946; font-size: 1.8rem; margin-bottom: 1rem; }
+
+    p { margin-bottom: 0.6rem; line-height: 1.6; color: #a0a0b0; }
+
+    .url-display {
+      font-family: monospace;
+      font-size: 0.85rem;
+      color: #6080b0;
+      word-break: break-all;
+      margin: 0.4rem 0 1rem;
+      min-height: 1.2em;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.65rem 1.4rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s ease, opacity 0.2s ease;
+    }
+
+    .btn-back {
+      background: #252540;
+      color: #b0b0c8;
+    }
+    .btn-back:hover { background: #32325a; }
+
+    /* Amber — visually distinct from the red "blocked" theme,
+       signals a deliberate, cautious action rather than confirmation. */
+    .btn-allow {
+      background: #d4900a;
+      color: #fff;
+      font-weight: 600;
+    }
+    .btn-allow:hover:not(:disabled) { background: #b87b08; }
+    .btn-allow:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    .allow-note {
+      font-size: 0.75rem;
+      color: #505060;
+      margin-top: 0.85rem;
+    }
+
+    .footer { margin-top: 2rem; font-size: 0.78rem; color: #383848; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>&#9888;&#65039; Access Blocked</h1>
+    <p>This page contains content related to individuals or organisations mentioned in the Epstein files.</p>
+    <p class="url-display" id="blockedHost"></p>
+
+    <div class="button-group">
+      <button class="btn btn-back" id="goBack">Go Back / Close Tab</button>
+      <button class="btn btn-allow" id="allowSite">Allow This Site</button>
+    </div>
+    <p class="allow-note">Access is granted for this browser session only and resets when you close Chrome.</p>
+
+    <div class="footer">Epstein &amp; Associates Blocker</div>
+  </div>
+
+  <script src="blockpage.js"></script>
+</body>
+</html>
