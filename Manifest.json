@@ -5,9 +5,7 @@
   "description": "Blocks websites and pages that mention individuals from the Epstein files.",
   "permissions": [
     "declarativeNetRequest",
-    "storage",
-    "tabs",
-    "scripting"
+    "storage"
   ],
   "host_permissions": [
     "<all_urls>"
