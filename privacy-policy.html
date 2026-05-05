@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy – Epstein &amp; Associates Blocker</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f9f9fb;
+      color: #1a1a2e;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid #e0e0e8;
+      border-radius: 10px;
+      padding: 3rem 3.5rem;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      margin-bottom: 0.4rem;
+      color: #0d0d1f;
+    }
+
+    .meta {
+      font-size: 0.85rem;
+      color: #666;
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+      color: #0d0d1f;
+      border-bottom: 1px solid #e8e8f0;
+      padding-bottom: 0.3rem;
+    }
+
+    p { margin-bottom: 0.9rem; }
+
+    ul {
+      margin: 0.5rem 0 0.9rem 1.5rem;
+    }
+
+    ul li { margin-bottom: 0.4rem; }
+
+    .highlight {
+      background: #f0f4ff;
+      border-left: 4px solid #3a5bd9;
+      border-radius: 4px;
+      padding: 0.85rem 1.1rem;
+      margin: 1.2rem 0;
+      font-size: 0.95rem;
+    }
+
+    a { color: #3a5bd9; }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 0.82rem;
+      color: #888;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 2rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <h1>Privacy Policy</h1>
+    <p class="meta">
+      Extension: <strong>Epstein &amp; Associates Blocker</strong><br>
+      Effective date: 5 May 2026<br>
+      Last updated: 5 May 2026
+    </p>
+
+    <div class="highlight">
+      <strong>Summary:</strong> This extension does not collect, transmit, sell, or share any personal data or browsing information. All processing happens locally on your device. No data ever leaves your browser.
+    </div>
+
+    <h2>1. Overview</h2>
+    <p>
+      Epstein &amp; Associates Blocker ("the Extension") is a Google Chrome extension that intercepts navigations to websites and web pages containing content related to individuals named in the Epstein court documents. When a match is detected, the Extension redirects the browser to a locally hosted block page. Users may choose to allow access to any blocked site for the remainder of their browser session.
+    </p>
+    <p>
+      This Privacy Policy explains what information the Extension accesses, how that information is used, and confirms that no personal data is collected or transmitted at any time.
+    </p>
+
+    <h2>2. Data We Do Not Collect</h2>
+    <p>The Extension does <strong>not</strong> collect, record, store externally, or transmit any of the following:</p>
+    <ul>
+      <li>Your browsing history or the URLs of pages you visit</li>
+      <li>The content of any web page you view</li>
+      <li>Personal identifiers of any kind (name, email address, IP address, device ID, etc.)</li>
+      <li>Cookies, authentication tokens, or session data from any website</li>
+      <li>Search queries or form input</li>
+      <li>Crash reports, diagnostic data, or usage analytics</li>
+    </ul>
+
+    <h2>3. What the Extension Does Access (Locally Only)</h2>
+    <p>To perform its blocking function, the Extension operates entirely within your browser:</p>
+
+    <h2>3a. Page Text Content</h2>
+    <p>
+      The Extension's content script reads the rendered text of each web page you visit
+      (<code>document.body.textContent</code>) and tests it against a locally stored list of names using a regular expression. This check happens entirely in your browser's memory. The text is never stored, logged, or sent anywhere — it is read once and immediately discarded.
+    </p>
+
+    <h2>3b. Navigation URLs (Network Level)</h2>
+    <p>
+      The Extension registers network-level rules using Chrome's <code>declarativeNetRequest</code> API. These rules are evaluated by the Chrome browser engine itself — not by any external server — to decide whether a navigation should be redirected. The Extension's code does not receive or log the URLs of pages you visit; the rules operate as a filter applied by Chrome before the request is made.
+    </p>
+
+    <h2>3c. Locally Stored Allow List</h2>
+    <p>
+      When you click "Allow This Site" on the block page, the domain name of the site you chose to allow (for example, <code>microsoft.com</code>) is saved to <code>chrome.storage.session</code>. This is a temporary storage area built into Chrome with the following properties:
+    </p>
+    <ul>
+      <li>It is stored only on your local device, never on any server.</li>
+      <li>It is automatically and permanently deleted when you close your browser.</li>
+      <li>It contains only the plain domain name (e.g. <code>microsoft.com</code>), not any URLs, page content, or personal information.</li>
+      <li>It is accessible only to this Extension and to no other website or service.</li>
+    </ul>
+
+    <h2>4. Data Sharing and Third Parties</h2>
+    <p>
+      The Extension does not share any data with any third party. It makes no network requests of its own — it does not contact any external server, analytics platform, advertising network, or any other remote service. There are no third-party libraries, SDKs, or tracking tools embedded in the Extension.
+    </p>
+
+    <h2>5. Remote Code</h2>
+    <p>
+      The Extension does not download or execute any code from a remote server. All JavaScript that runs in the Extension is bundled within the Extension package and served locally from the <code>chrome-extension://</code> origin. This is fully compliant with Google's Manifest V3 policy prohibiting remotely hosted code.
+    </p>
+
+    <h2>6. Permissions Explanation</h2>
+    <p>The Extension requests the following Chrome permissions:</p>
+    <ul>
+      <li>
+        <strong>declarativeNetRequest</strong> — Required to register the network-level rules that redirect navigations to blocked domains and URLs to the local block page, and to add allow rules when the user permits a site.
+      </li>
+      <li>
+        <strong>storage</strong> — Required to temporarily save the list of domains the user has explicitly allowed for the current browser session, so that the content script knows not to re-block those sites. This data is session-only and never leaves the device.
+      </li>
+      <li>
+        <strong>Host permission (&lt;all_urls&gt;)</strong> — Required because the Extension cannot predict in advance which websites may contain content related to the individuals on the blocklist. The content script must be able to check page text on any domain. No browsing data from these sites is collected or transmitted.
+      </li>
+    </ul>
+
+    <h2>7. Children's Privacy</h2>
+    <p>
+      The Extension does not collect personal information from anyone, including children under the age of 13. No age-gated content or age verification is required because no personal data is collected at any point.
+    </p>
+
+    <h2>8. Your Control Over the Extension</h2>
+    <p>You have full control over the Extension at all times:</p>
+    <ul>
+      <li><strong>Allow a site temporarily:</strong> Click "Allow This Site" on the block page. Access is granted for the current browser session only and is revoked automatically when you close Chrome.</li>
+      <li><strong>Disable the Extension:</strong> Open <code>chrome://extensions</code> and toggle the Extension off. No data persists after the browser session ends regardless.</li>
+      <li><strong>Uninstall the Extension:</strong> Open <code>chrome://extensions</code>, find the Extension, and click "Remove". All local session data (if any) is permanently deleted upon removal.</li>
+    </ul>
+
+    <h2>9. Changes to This Policy</h2>
+    <p>
+      If this Privacy Policy changes, the updated version will be published at this URL with a revised "Last updated" date. Continued use of the Extension after any change constitutes acceptance of the updated policy. Given that the Extension does not collect personal data, changes to this policy are expected to be minimal.
+    </p>
+
+    <h2>10. Contact</h2>
+    <p>
+      If you have any questions or concerns about this Privacy Policy or the Extension's data practices, please contact:
+    </p>
+    <p>
+      <strong>Travis Hobbs</strong><br>
+      Email: <a href="mailto:travishobbs2014@gmail.com">travishobbs2014@gmail.com</a><br>
+      GitHub: <a href="https://github.com/hobdawg/epstein-blocker-extension" target="_blank" rel="noopener noreferrer">github.com/hobdawg/epstein-blocker-extension</a>
+    </p>
+
+    <footer>
+      Epstein &amp; Associates Blocker &mdash; Privacy Policy &mdash; Effective 5 May 2026
+    </footer>
+
+  </div>
+</body>
+</html>
